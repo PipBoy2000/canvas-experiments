@@ -7,8 +7,6 @@ var App = createReactClass({
 
   getInitialState: function() {
     return {
-      containerWidth: 0,
-      containerHeight: 0,
       urls: ['https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/london.jpg',
         'http://www.93143.mrsite.com/USERIMAGES/sydmay09%20147%20copypw.jpg',
         'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/paris.jpg',
