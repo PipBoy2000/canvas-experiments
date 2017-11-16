@@ -6,7 +6,9 @@ Some basic notes: I have gotten feed back from others that React.createClass was
 
 Basically, the custom work horse here is `src/components/ImageGIFView`. It handles the image uploading and animated pushing of the relevent image to `src/components/ImageCanvas` while `src/compnents/SliderComponent` provides an input event hook for `ImageGIFView`. `ImageCanvas` & `SliderComponent` are full modular and reusable components that can be used for other applications.
 
-I used the good old windows.requestFrameAnimation for timing the image drawing on the canvas. I also had to use a lot of callBacks with setState calls because things would happen far quicker than the state would be eventually updated.  I could have used Redux, but I thought this was such a simple app that it would be extra boilerplate. 
+I used the good old windows.requestFrameAnimation for timing the image drawing on the canvas. I also had to use a lot of callBacks with setState calls because things would happen far quicker than the state would be eventually updated. I do have a flag in state for no longer calling the animation should the component be dismounted, just to be on the memory leakage safe side.  
+
+I could have used Redux, but I thought this was such a simple app that it would be extra boilerplate. 
 
 TODO(s):
 
