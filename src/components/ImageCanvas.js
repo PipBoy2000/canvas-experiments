@@ -8,12 +8,12 @@ var ImageCanvas = createReactClass({
   canvasEl: null,
 
   getCanvasContext: function() {
-    return this.canvas.getContext('2d');
+    return this.canvasEl.getContext('2d');
   },
 
   componentDidMount: function() {
     if (this.props.image) {
-      let context = this.getCanvasContext()
+      let context = this.getCanvasContext();
       this.paint(context);
     }
   },
