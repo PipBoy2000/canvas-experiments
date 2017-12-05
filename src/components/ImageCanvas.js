@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {ImageUtils} from '../utilities';
 
 var createReactClass = require('create-react-class');
 
 var ImageCanvas = createReactClass({
 
+  canvas: null,
+
   getCanvasContext: function() {
-    return ReactDOM.findDOMNode(this).getContext('2d');
+    return this.canvas.getContext('2d');
   },
 
   componentDidMount: function() {
@@ -16,7 +17,7 @@ var ImageCanvas = createReactClass({
       this.paint(context);
     }
   },
-  
+
   componentDidUpdate: function() {
     let context = this.getCanvasContext();
     context.clearRect(0, 0, this.props.width, this.props.height);
@@ -31,7 +32,10 @@ var ImageCanvas = createReactClass({
   },
 
   render: function() {
-    return <canvas className="gif-canvas" width={this.props.width} height={this.props.height} />;
+    return <canvas className="gif-canvas"
+      ref={(node) => {this.canvas = node;}}
+      width={this.props.width}
+      height={this.props.height} />;
   }
 
 });
