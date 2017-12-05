@@ -5,7 +5,7 @@ var createReactClass = require('create-react-class');
 
 var ImageCanvas = createReactClass({
 
-  canvas: null,
+  canvasEl: null,
 
   getCanvasContext: function() {
     return this.canvas.getContext('2d');
@@ -33,7 +33,7 @@ var ImageCanvas = createReactClass({
 
   render: function() {
     return <canvas className="gif-canvas"
-      ref={(node) => {this.canvas = node;}}
+      ref={(node) => {this.canvasEl = node;}}
       width={this.props.width}
       height={this.props.height} />;
   }
