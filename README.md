@@ -2,7 +2,7 @@ This is a React App that takes images, loads them into a HTML5 canvas and then u
 
 If I had to do this all over again, I would probably try to use REACT-CANVAS [https://github.com/Flipboard/react-canvas] as it seemed as if I duplicated some of how they approached this problem and they probably did it way better. But I only figured this out after I was almost done building this. 
 
-Some basic notes: I have gotten feed back from others that React.createClass was still the way to go as extending out Component will create components that have a lot of performance baggage. So I did that here. But, I can easily code with Component extentsions.  Also, I used Bootstrap CSS. Not so much for the look and feel but for the layout structure that they already have in place. In a real prod env I would use our own CSS platform.
+Some basic notes: I have gotten feed back from others that React.createClass was still the way to go as extending out Component will create components that have a lot of performance baggage. So I did that here. But, I can easily code with Component class extensions.  Also, I used Bootstrap CSS. Not so much for the look and feel but for the layout structure that they already have in place. In a real prod env I would use our own CSS platform.
 
 Basically, the custom work horse here is `src/components/ImageGIFView`. It handles the image uploading and animated pushing of the relevent image to `src/components/ImageCanvas` while `src/compnents/SliderComponent` provides an input event hook for `ImageGIFView`. `ImageCanvas` & `SliderComponent` are full modular and reusable components that can be used for other applications.
 
